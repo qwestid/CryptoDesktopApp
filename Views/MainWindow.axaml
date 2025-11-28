@@ -1,0 +1,33 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="clr-namespace:CryptoDesktopApp.ViewModels"
+        x:Class="CryptoDesktopApp.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Title="Crypto CSP Manager"
+        Width="600" Height="500">
+    <StackPanel Margin="20" Spacing="10">
+        <TextBlock Name="StatusText" FontSize="16" Text="Crypto CSP Manager" FontWeight="Bold"/>
+        
+        <StackPanel Orientation="Horizontal" Spacing="5">
+            <Button Name="StartButton" Content="Start Container"/>
+            <Button Name="StopButton" Content="Stop Container"/>
+            <Button Name="StatusButton" Content="Check Status"/>
+            <Button Name="RefreshButton" Content="Refresh Containers"/>
+        </StackPanel>
+
+        <TextBlock Name="ContainersText" Text="Containers: " FontWeight="Bold"/>
+        
+        <!-- Containers List -->
+        
+            <ListBox ItemsSource="{Binding Containers}">
+            </ListBox>
+        
+        
+        <TextBox Name="DataInput" Watermark="Enter data to sign..." Height="40"/>
+        <Button Name="SignButton" Content="Sign Data" Background="LightBlue"/>
+        
+        <TextBox Name="ResultOutput" IsReadOnly="True" Background="#F0F0F0" Height="40"/>
+        
+        <ProgressBar Name="ProgressBar" Height="10"/>
+    </StackPanel>
+</Window>
