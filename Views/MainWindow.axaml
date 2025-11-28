@@ -19,10 +19,6 @@
         
         <!-- Containers List -->
         
-            <ListBox ItemsSource="{Binding Containers}">
-            </ListBox>
-        
-        
         <TextBox Name="DataInput" Watermark="Enter data to sign..." Height="40"/>
         <Button Name="SignButton" Content="Sign Data" Background="LightBlue"/>
         
